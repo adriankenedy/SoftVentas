@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+
+    {% include 'comunes/principal.html' %}
+
+</head>
+<body>
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+          <section>
+            <div class="row">
+              <div>
+                <h2>Edición de Producto</h2>
+  
+                <form action="/actualizarPInventario/{{inventario.0}}" method="post">
+                  <div class="mb-3">
+                    <label for="id">ID Producto:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" name="id" value="{{inventario.0}}" disabled="true">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="nombre">Nombre Producto:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" name="nombre" value="{{inventario.1}}" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="descripcion">Descripción:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" name="descripcion" value="{{inventario.2}}" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="lote">Lote:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" name="lote" value="{{inventario.3}}" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="precio">Precio:</label>
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" name="precio" value="{{inventario.4}}" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cantidad">Cantidad:</label>
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" name="cantidad" value="{{inventario.5}}" required>
+                    </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-primary"
+                    onclick="return confirm('El Producto {{inventario.1}} sera editado')">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+
+    {% include 'comunes/principal.html' %}
+
+</head>
+<body>
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+          <section>
+            <div class="row">
+              <div>
+                <h2>Registro para Nuevo Producto</h2>
+  
+                <form action="/insertarPInventario" method="post">
+                  <div class="mb-3">
+                    <label for="nombreP">Nombre Producto:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="Nombre" name="nombrePI" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="descripcion">Descripción:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="Descripción" name="descripcion" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="lote">Lote:</label>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" placeholder="Lote" name="lote" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="precio">Precio:</label>
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" placeholder="Precio" name="precio" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cantidad">Cantidad:</label>
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" placeholder="Cantidad" name="cantidad" required>
+                    </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    
+</body>
+</html>

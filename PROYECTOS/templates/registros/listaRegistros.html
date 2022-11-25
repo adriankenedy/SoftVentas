@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Registros</title>
+
+        <link rel="stylesheet" href="../../static/css/estilos.css" />
+
+
+        {% include 'comunes/principal.html' %}
+
+    </head>
+    <body>
+        <main style="margin-top: 58px">
+            <div class="container pt-4">
+                <section>
+                    <div class="row">
+                        <div>
+                            <h2>Lista de Registros</h2>
+
+                            {{ pagination.info }}
+                            <div class="panel-body table-responsive">
+                                <table id="tablaUsuarios" class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Fecha</th>
+                                            <th>Total </th>
+                                            <th></th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for reg in registros %}
+                                        <tr>
+                                            <td>{{reg.0}}</td>
+                                            <td>{{reg.1}}</td>
+                                            <td>{{reg.2}}</td>
+                                            <td></td>
+                                            <td>
+                                                <a id="editar" href="/verRegistro/{{reg.0}}"
+                                                    class="btn btn-info btn-rounded" role="button"> <i class="fa-solid fa-eye"></i></a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {{ pagination.links }}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </body>
+</html>

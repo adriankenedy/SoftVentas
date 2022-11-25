@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Registro</title>
+
+    <link rel="stylesheet" href="../../static/css/estilos.css" />
+
+    {% include 'comunes/principal.html' %}
+
+</head>
+<body>
+    <main style="margin-top: 58px">
+        <div class="container pt-4">
+          <section>
+            <div class="row">
+              <div>
+                <h2>Detalle Venta</h2>
+  
+                <div class="panel-body table-responsive">
+                    <table id="tablaUsuarios" class="table ">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Lote</th>
+                                <th>Precio </th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for det in detalles %}
+                            <tr>
+                                <td>{{det.0}}</td>
+                                <td>{{det.1}}</td>
+                                <td>{{det.2}}</td>
+                                <td>{{det.3}}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>  
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+
+	<header class="content-header">
+		<div class="header">
+			<div class="copyright">
+				<span class="go-right" style="float: right;">
+					<script type="text/javascript">
+			function startTime() {
+				today = new Date();
+				h = today.getHours();
+				m = today.getMinutes();
+				s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
+				t = setTimeout('startTime()', 500);
+			}
+			function checkTime(i) { if (i < 10) { i = "0" + i; } return i; }
+			window.onload = function () { startTime(); }
+		</script>
+					<div id="reloj" style="font-size:20px;"></div>
+
+					<script type="text/javascript">
+			//<![CDATA[
+			function makeArray() {
+				for (i = 0; i < makeArray.arguments.length; i++)
+					this[i + 1] = makeArray.arguments[i];
+			}
+			var months = new makeArray('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo',
+				'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth() + 1;
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+			document.write("" + day + " de " + months[month] + " del " + year);
+		</script>
+				</span>
+			</div>
+		</div>
+	</header>
+</html>

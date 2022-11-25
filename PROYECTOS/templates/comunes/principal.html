@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Inicio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      />
+    <!-- MDB -->
+    <link rel="stylesheet" href="../../static/css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../../static/css/admin.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8eff9b36dc.js" crossorigin="anonymous"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+      footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/
+            height: 30px;
+            background: #56877d;
+        }
+      .avatar {
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+
+      a:hover{
+        box-shadow: 0px 0px 5px 1px black;
+      }
+
+      img {
+        width: 50%;
+      }
+
+      #imagen_menu {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .card.widget-flat{
+        box-shadow: 0px 0px 5px 1px black;
+        background-color: rgba(169, 169, 169, 0.17);
+      }
+
+      h2{
+        text-align: center;
+        color: black;
+      }
+      </style>
+  </head>
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse"
+      style="background-color: #8ccc81; box-shadow: 0px 0px 5px 1px black;">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-1 mt-4">
+          <a href="/menu" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #8ccc81;">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Inicio</span>
+          </a>
+
+          <a href="/usuarios" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #8ccc81;">
+            <i class="fas fa-users fa-fw me-3"></i><span>Usuarios </span>
+          </a>
+
+          <a href="/inventario" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #8ccc81;">
+            <i class="fa-solid fa-clipboard-list me-3"></i><span>Inventario</span>
+          </a>
+
+          <a href="/ventas" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #8ccc81;">
+            <i class="fa-regular fa-money-bill-1 me-3"></i><span>Venta</span>
+          </a>
+
+          <a href="/registros" class="list-group-item list-group-item-action py-2 ripple" style="background-color: #8ccc81;">
+            <i class="fa-solid fa-clipboard-list me-3"></i><span>Registros</span>
+          </a>
+
+        </div>
+
+      </div>
+      <div style="position: absolute; bottom: 0;">
+        {% include 'comunes/footer.html' %}
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: #56877d; ">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+          aria-label="Toggle navigation"> <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <h5 style="color: black;">{{ user }}</h5>
+              <img src="../../static/img/avatar.png" alt="Avatar" class="avatar">
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="/cerrarsesion">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+
+  <body>
+    <!--Main layout-->
+
+    <!--Main layout-->
+    <!-- MDB -->
+    <script type="text/javascript" src="../../static/js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="../../static/js/admin.js"></script>
+    <script>
+      
+    path = window.location.pathname;
+    if(path == '/inicio' || path == '/menu'){
+      $("body").append(`
+      <main id="menuPrincipal">
+            <div class="container">
+                <div class="col-xl-5 col-lg-6" style="margin-left: auto; margin-right: auto;">
+                    <div class="row vh-100 justify-content-around align-items-center">
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <div class="card widget-flat">
+                                    <a href="/usuarios">
+                                        <div class="card-body">
+                                                <img id="imagen_menu" src="../../static/img/usuarios.png">
+                                        </div>
+                                        <h2>Usuarios</h2>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card widget-flat">
+                                    <a href="/inventario">
+                                        <div class="card-body">
+                                                <img id="imagen_menu" src="../../static/img/inventario.png">
+                                        </div>
+                                        <h2>Inventario</h2>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card widget-flat">
+                                    <a href="/ventas">
+                                        <div class="card-body">
+                                                <img id="imagen_menu" src="../../static/img/venta.png">
+                                        </div>
+                                        <h2>Venta</h2>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card widget-flat">
+                                    <a href="/registros">
+                                        <div class="card-body">
+                                                <img id="imagen_menu" src="../../static/img/registros.png">
+                                        </div>
+                                        <h2>Registros</h2>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        `);
+      }
+    </script>
+  </body>
+
+  <footer>
+    <p style="float: right; ">Made by Adrian Ramirez</p>
+  </footer>
+
+</html>

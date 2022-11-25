@@ -1,0 +1,18 @@
+#tablaUsuarios th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #384440;
+    color: white;
+}
+/*
+#tablaUsuarios tbody tr:hover {
+  box-shadow: 0px 0px 5px 1px black;
+  }
+*/
+.table-responsive {
+  overflow: scroll;
+  height: 370px;
+  
+
+}
