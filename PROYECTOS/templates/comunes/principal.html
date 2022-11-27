@@ -25,6 +25,9 @@
     <script src="https://kit.fontawesome.com/8eff9b36dc.js" crossorigin="anonymous"></script>
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../../static/css/estilos.css" />
+
     <style>
       footer {
             position: fixed;
@@ -35,37 +38,7 @@
             height: 30px;
             background: #56877d;
         }
-      .avatar {
-        vertical-align: middle;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-left: 10px;
-      }
 
-      a:hover{
-        box-shadow: 0px 0px 5px 1px black;
-      }
-
-      img {
-        width: 50%;
-      }
-
-      #imagen_menu {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .card.widget-flat{
-        box-shadow: 0px 0px 5px 1px black;
-        background-color: rgba(169, 169, 169, 0.17);
-      }
-
-      h2{
-        text-align: center;
-        color: black;
-      }
       </style>
   </head>
   <!--Main Navigation-->
@@ -105,7 +78,7 @@
     </nav>
     <!-- Sidebar -->
     <!-- Navbar -->
-    <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: #56877d; ">
+    <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top">
       <!-- Container wrapper -->
       <div class="container-fluid">
 
@@ -119,10 +92,10 @@
 
           <!-- Avatar -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <div class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
               <h5 style="color: black;">{{ user }}</h5>
               <img src="../../static/img/avatar.png" alt="Avatar" class="avatar">
-            </a>
+            </div>
 
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">My profile</a></li>
@@ -154,9 +127,9 @@
       $("body").append(`
       <main id="menuPrincipal">
             <div class="container">
-                <div class="col-xl-5 col-lg-6" style="margin-left: auto; margin-right: auto;">
+                <div id="menuiconos" class="col-xl-5 col-lg-6" >
                     <div class="row vh-100 justify-content-around align-items-center">
-                        <div class="row g-3">
+                        <div id="acciones" class="row g-3">
 
                             <div class="col-md-6">
                                 <div class="card widget-flat">
@@ -212,8 +185,6 @@
     </script>
   </body>
 
-  <footer>
-    <p style="float: right; ">Made by Adrian Ramirez</p>
-  </footer>
+
 
 </html>

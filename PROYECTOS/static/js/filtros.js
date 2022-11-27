@@ -48,7 +48,6 @@ function buscarProductos() {
 
 var $tablaCarrito = $('#tablaCarrito');
 
-
 function carrito(inv0, inv1, inv2, inv3){
     
     var lote = inv1;
@@ -67,7 +66,7 @@ function carrito(inv0, inv1, inv2, inv3){
         </td>
         <td>
             <div class="col-md-14">
-                <input type="text" class="form-control" name="producto"  value="${inv1}" >
+                <input id="pnombre" type="text" class="form-control" name="producto"  value="${inv1}" >
             </div>
         </td>
         <td>
@@ -93,11 +92,7 @@ function carrito(inv0, inv1, inv2, inv3){
     </tr>
     `);
     
-/*
-    $('input[name^=precio]').each(function(){
-        precioP.push($(this).val());
-    });
-*/
+    
 }
 
 function descartarCarrito(lote){
@@ -121,8 +116,43 @@ function entidades(){
         $(elem).find("#totalPC").val(totalP);
         $("#sumaproductos").val(t);
 
-        //console.log(index, precio, cantidad, totalP, t);
     });
      
 }
 
+
+
+$("#tVenta").click(function(){
+    var vC = $("#tablaCarrito tr").length;
+    let cantidad = "";
+    let pnombre = "";
+    let total = "";
+
+    $("#tablaCarrito tr").each(function(index, ele){
+        cantidad = $(ele).find("#cantidadproducto").val();
+        pnombre = $(ele).find("#pnombre").val();
+        total = $(ele).find("#totalPC").val();
+
+    });
+
+    if(vC > 0){
+        var tv =  confirm("¿Terminar venta?");
+        
+        if(tv == true){
+            
+            if(cantidad === "" && total === "" || total == null){
+                alert(`Debe agregar una cantidad al producto ${pnombre}`);
+                return false;
+        
+            }
+
+        }else{
+            return false;
+        }
+        
+    }else{
+        alert("Debe agregar como minimo un producto.");
+        return false;
+    }
+    
+});

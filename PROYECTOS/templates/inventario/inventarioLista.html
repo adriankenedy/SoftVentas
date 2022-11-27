@@ -28,11 +28,12 @@
     <main style="margin-top: 58px">
         <div class="container pt-4">
             <section>
-                <div class="row">
+                <div class="row justify-content-around align-items-center">
                     <div>
-                        <h2>Inventario</h2>
-                        <br>
-                        <div class="row g-3">
+                        <div id="acciones" class="row g-3">
+                            <div>
+                                <h2>Inventario</h2>
+                            </div>
                             <div class="col-md-4">
                                 <a href="/nuevoPInventario" class="btn btn-primary" role="button">Agregar Producto</a>
                             </div>
@@ -41,45 +42,51 @@
                             </div>
                         </div>
                         <br>
-                        {{ pagination.info }}
+                        <div id="contenidoTablas" class="row"> 
+                            <div id="infopaginacion">
+                                {{ pagination.info }}
+                            </div>
                         <div class="panel-body table-responsive">
-                        <table id="tablaUsuarios" class="table ">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre Producto</th>
-                                        <th>Descripción </th>
-                                        <th>Lote</th>
-                                        <th>Precio</th>
-                                        <th>Existencias</th>
-                                        <th></th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="myTable">
-                                    {% for inv in inventario %}
-                                    <tr>
-                                        <td>{{inv.0}}</td>
-                                        <td>{{inv.1}}</td>
-                                        <td>{{inv.2}}</td>
-                                        <td>{{inv.3}}</td>
-                                        <td>{{inv.4}}</td>
-                                        <td>{{inv.5}}</td>
-                                        <td></td>
-                                        <td>
-                                            <a id="editar" href="/editarInventario/{{inv.0}}" class="btn btn-info btn-rounded" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            <table id="tablaUsuarios" class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre Producto</th>
+                                            <th>Descripción </th>
+                                            <th>Lote</th>
+                                            <th>Precio</th>
+                                            <th>Existencias</th>
+                                            <th></th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="myTable">
+                                        {% for inv in inventario %}
+                                        <tr>
+                                            <td>{{inv.0}}</td>
+                                            <td>{{inv.1}}</td>
+                                            <td>{{inv.2}}</td>
+                                            <td>{{inv.3}}</td>
+                                            <td>{{inv.4}}</td>
+                                            <td>{{inv.5}}</td>
+                                            <td></td>
+                                            <td>
+                                                <a id="editar" href="/editarInventario/{{inv.0}}" class="btn btn-info btn-rounded" role="button">
+                                                    <i class="fa-solid fa-pen-to-square"></i></a>
 
-                                            <a id="eliminar" href="/eliminarInventario/{{inv.0}}" 
-                                                onclick="return confirm('¿Deseas borrar el Producto {{inv.1}}?')" class="btn btn-danger
-                                                btn-rounded" role="button"><i class="fa-solid fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                        </table>
+                                                <a id="eliminar" href="/eliminarInventario/{{inv.0}}" 
+                                                    onclick="return confirm('¿Deseas borrar el Producto {{inv.1}}?')" class="btn btn-danger
+                                                    btn-rounded" role="button"><i class="fa-solid fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                            </table>
                         </div>
-                        {{ pagination.links }}
+                        </div>
+                        <div id="paginacion">
+                            {{ pagination.links }}
+                        </div>
                     </div>
                 </div>
             </section>

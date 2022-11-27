@@ -30,11 +30,12 @@
         <main style="margin-top: 58px">
             <div class="container pt-4">
                 <section>
-                    <div class="row">
+                    <div class="row justify-content-around align-items-center">
                         <div>
-                            <h2>Lista de Usuarios</h2>
-                            <br>
-                            <div class="row g-3">
+                            <div id="acciones" class="row g-3">
+                                <div>
+                                    <h2>Lista de Usuarios</h2>
+                                </div>
                                 <div class="col-md-4">
                                     <a href="/nuevoUsuario" class="btn btn-primary" role="button">Agregar Usuario</a>
                                 </div>
@@ -43,41 +44,47 @@
                                 </div>
                             </div>
                             <br>
-                            {{ pagination.info }}
-                            <div class="panel-body table-responsive">
-                            <table id="tablaUsuarios" class="table ">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre Usuario</th>
-                                            <th>Apellido </th>
-                                            <th>Usuario</th>
-                                            <th></th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="myTable">
-                                        {% for usuario in usuarios %}
-                                        <tr>
-                                            <td>{{usuario.0}}</td>
-                                            <td>{{usuario.1}}</td>
-                                            <td>{{usuario.2}}</td>
-                                            <td>{{usuario.3}}</td>
-                                            <td></td>
-                                            <td>
-                                                <a id="editar" href="/editarUsuario/{{usuario.0}}" class="btn btn-info btn-rounded" role="button">
-                                                    <i class="fa-solid fa-pen-to-square"></i></a>
+                            <div id="contenidoTablas" class="row"> 
+                                <div id="infopaginacion">
+                                    {{ pagination.info }}
+                                </div>
+                                <div class="panel-body table-responsive">
+                                    <table id="tablaUsuarios" class="table ">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre Usuario</th>
+                                                    <th>Apellido </th>
+                                                    <th>Usuario</th>
+                                                    <th></th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="myTable">
+                                                {% for usuario in usuarios %}
+                                                <tr>
+                                                    <td>{{usuario.0}}</td>
+                                                    <td>{{usuario.1}}</td>
+                                                    <td>{{usuario.2}}</td>
+                                                    <td>{{usuario.3}}</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a id="editar" href="/editarUsuario/{{usuario.0}}" class="btn btn-info btn-rounded" role="button">
+                                                            <i class="fa-solid fa-pen-to-square"></i></a>
 
-                                                <a id="eliminar" href="/eliminarUsuario/{{usuario.0}}" 
-                                                    onclick="return confirm('¿Deseas borrar el usuario {{usuario.1}}?')" class="btn btn-danger
-                                                    btn-rounded" role="button"><i class="fa-solid fa-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                            </table>
+                                                        <a id="eliminar" href="/eliminarUsuario/{{usuario.0}}" 
+                                                            onclick="return confirm('¿Deseas borrar el usuario {{usuario.1}}?')" class="btn btn-danger
+                                                            btn-rounded" role="button"><i class="fa-solid fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                    </table>
+                                </div>                                                                
                             </div>
-                            {{ pagination.links }}
+                            <div id="paginacion">
+                                {{ pagination.links }}
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -16,3 +16,76 @@
   
 
 }
+
+#acciones{                
+  display: flex;
+  justify-content: center;
+}
+
+#menuiconos{
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#main-navbar{
+  background-color: #56877d;
+  position: absolute;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+a:hover{
+  box-shadow: 0px 0px 5px 1px black;
+}
+
+img {
+  width: 50%;
+}
+
+#imagen_menu {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card.widget-flat{
+  box-shadow: 0px 0px 5px 1px black;
+  background-color: rgba(169, 169, 169, 0.17);
+}
+
+h2{
+  text-align: center;
+  color: black;
+}
+
+#contenidoTablas{
+  box-shadow: 0px 0px 3px 1px black;
+  border-radius: 5px;
+ 
+}
+
+#paginacion{
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+#infopaginacion{
+  display: flex;
+  justify-content: center;
+}
+
+#finventa{
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+
+}

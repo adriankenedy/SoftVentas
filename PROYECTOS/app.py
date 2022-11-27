@@ -330,6 +330,7 @@ def terminarVenta():
             ventas.append(venta)
             
             for v in ventas:
+                logging.info(f'--------- Venta agregada: {v}')
                 
                 for i, prod in enumerate(producto):
 
@@ -368,7 +369,7 @@ def terminarVenta():
 
 @app.route('/registros')
 def registros():
-    per_page = 5
+    per_page = 10
     page = request.args.get(get_page_parameter(), type=int, default=1)
     offset = (page - 1) * per_page
 

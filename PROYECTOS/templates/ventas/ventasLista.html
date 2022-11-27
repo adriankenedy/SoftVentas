@@ -10,6 +10,7 @@
 
         {% include 'comunes/principal.html' %}
 
+
     </head>
     <body>
         <main style="margin-top: 58px">
@@ -17,67 +18,52 @@
                 <section>
                     <div class="row">
                         <div>
-                            <h2>Ventas</h2>
-                            <!-- Button trigger modal -->
-                            <br>
-                            <div class="row g-3">
+                            <div id="acciones" class="row g-3">
+                                <div>
+                                    <h2>Ventas</h2>
+                                </div>
                                 <div class="col-md-4">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProductos" >
                                         Agregar Producto
                                     </button>
                                 </div>
+                                <div class="col-md-6">
+                                    <strong>Advertencia!</strong> Asegurate de ingresar una cantidad a cada producto.
+                                  </div>
                             </div>
                             <br>
-                            <div class="panel-body table-responsive">
-                                <form action="/terminarVenta" method="post" class="form-group">
-                                    <table id="tablaUsuarios" class="table ">
-                                            <thead>
-                                                <tr>
-                                                    <th>Descartar</th>
-                                                    <th>ID</th>
-                                                    <th>Producto</th>
-                                                    <th>Lote </th>
-                                                    <th>Precio</th>
-                                                    <th>Cantidad</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tablaCarrito">                                                           
-                                                    
-                                            </tbody>
-                                    </table>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <table>
-                                                <tbody>
+                            <div id="contenidoTablas" class="row g-1"> 
+                                <div class="panel-body table-responsive">
+                                    <form action="/terminarVenta" method="post" class="form-group">
+                                        <table id="tablaUsuarios" class="table ">
+                                                <thead>
                                                     <tr>
-                                                        <td>
-                                                            <table id="tablaTotales">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td><h4>Total: $</h4></td>
-                                                                        <td>
-                                                                            <div class="col-md-14">
-                                                                                <input id="sumaproductos" type="text" class="form-control" name="sumaproductos" value="" >
-                                                                            </div>
-                                                                        </td>                                                                    
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
+                                                        <th>Descartar</th>
+                                                        <th>ID</th>
+                                                        <th>Producto</th>
+                                                        <th>Lote </th>
+                                                        <th>Precio</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Total</th>
                                                     </tr>
+                                                </thead>
+                                                <tbody id="tablaCarrito">                                                           
+                                                        
                                                 </tbody>
-                                            </table>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <button type="submit" class="btn btn-success"
-                                            onclick="return confirm('¿Cerrar venta?')">Cerrar Venta</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                        </table>
+                                </div>
+                            </div>
+                                    
+                            <div id="finventa" class="row">
+                                <div class="col-sm">
+                                    <h4>Total:</h4>
+                                    <input id="sumaproductos" type="text" class="form-control" name="sumaproductos" value="" >
+                                </div>
+                                <div class="col-sm">
+                                    <button style="float: right;" id="tVenta" type="submit" class="btn btn-success">Cerrar Venta</button>
+                                </div>
+                            </div>
+                        </form>
                             <!-- Modal -->
                             <div class="modal fade bd-example-modal-lg" id="modalProductos" tabindex="-1" role="dialog" aria-labelledby="modalProductosTitle"
                                 aria-hidden="true">
