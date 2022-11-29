@@ -1,33 +1,5 @@
-INFO:root:--------- Venta agregada: (43,)
+INFO:root:--------- Venta agregada: (55,)
 INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Flanax 500gr', '006', '30.0', '1', '43')]
-INFO:root:--------- Venta agregada: (44,)
+INFO:root:2022-11-28: [('Flanax 250gr', '006', '20.0', '5', '55')]
 INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 500gr', '004', '80.0', '2', '44')]
-INFO:root:--------- Venta agregada: (45,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 500gr', '004', '80.0', '2', '45')]
-INFO:root:--------- Venta agregada: (46,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Flanax 500gr', '006', '30.0', '2', '46')]
-INFO:root:--------- Venta agregada: (47,)
-INFO:root:--------- Venta agregada: (48,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Flanax 500gr', '006', '30.0', '12', '48')]
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 500gr', '004', '80.0', '2', '48')]
-INFO:root:--------- Venta agregada: (49,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Paracetamol 500gr', '002', '20.0', '2', '49')]
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 300gr', '005', '50.0', '2', '49')]
-INFO:root:--------- Venta agregada: (50,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 500gr', '004', '80.0', '5', '50')]
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Loracepam 500gr', '004', '80.0', '2', '50')]
-INFO:root:--------- Venta agregada: (51,)
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Flanax 500gr', '006', '30.0', '20', '51')]
-INFO:root:------------------ Productos de la venta ------------------
-INFO:root:2022-11-26: [('Flanax 250gr', '006', '20.0', '2', '51')]
+INFO:root:2022-11-28: [('Loracepam 500gr', '004', '80.0', '2', '55')]
